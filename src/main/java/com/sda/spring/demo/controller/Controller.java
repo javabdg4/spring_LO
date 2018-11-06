@@ -33,6 +33,13 @@ public class Controller {
         return bookService.getBooks();
     }
 
+    /*
+        /api/category/{id}
+        CategoryNotFoundException
+        + jedna metoda ExceptionHandlerAdvice
+        + orElseThrow
+     */
+
     @RequestMapping(value = "/api/books/{id}", method = RequestMethod.GET)
     public ResponseEntity<Book> book(@PathVariable Long id){
         return ResponseEntity
