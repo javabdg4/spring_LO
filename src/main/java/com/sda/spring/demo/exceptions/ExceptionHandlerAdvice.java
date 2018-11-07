@@ -29,11 +29,9 @@ public class ExceptionHandlerAdvice {
     public ResponseEntity inputHandleException(MethodArgumentNotValidException e){
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ApiError(
+                .body(new ValidationError(
                         HttpStatus.BAD_REQUEST,
-                        "Nieprawidłowe dane",
-                        Arrays.asList("id", "parametr"),
-                        LocalDateTime.now()
+                        e.getBindingResult().getAllErrors()
                 ));
 
     }
