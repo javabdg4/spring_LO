@@ -7,10 +7,22 @@
 <body>
 <h1>Księgarnia</h1>
 
+<table border="1">
+    <tr>
+        <td>Tytuł książki</td>
+        <td>Kategoria</td>
+        <td>Autorzy222</td>
+    </tr>
 
-<table>
     <tr th:each="book : ${books}">
         <td th:text="${book.getTitle()}"></td>
+        <td th:text="${book.getCategory().getName()}"></td>
+        <td>
+            <div th:each="author : ${book.getAuthorSet()}">
+                <span th:text="${author.getName()}"></span>
+                <span th:text="${author.getLastname()}"></span>
+            </div>
+        </td>
     </tr>
 </table>
 </body>

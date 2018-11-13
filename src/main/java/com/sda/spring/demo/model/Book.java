@@ -10,11 +10,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.MERGE)
     private Set<Author> authorSet;
 
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.MERGE)
     private Category category;
 
     public Book(){}
@@ -45,6 +45,10 @@ public class Book {
 
     public void setAuthorSet(Set<Author> authorSet) {
         this.authorSet = authorSet;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public void setCategory(Category category) {

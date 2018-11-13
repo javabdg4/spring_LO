@@ -1,10 +1,11 @@
 package com.sda.spring.demo.repository;
 
 import com.sda.spring.demo.model.Author;
+import com.sda.spring.demo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AuthorRepository extends
-        JpaRepository<Author,Long> {
+public interface UserRepository extends
+        JpaRepository<User,Long> {
 }
