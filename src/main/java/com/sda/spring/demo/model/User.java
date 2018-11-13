@@ -13,7 +13,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Long;
+    private Long id;
 
     private String name;
     private String lastname;
@@ -31,12 +31,12 @@ public class User {
         this.phone = phone;
     }
 
-    public int getLong() {
-        return Long;
+    public Long getId() {
+        return id;
     }
 
-    public void setLong(int aLong) {
-        Long = aLong;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

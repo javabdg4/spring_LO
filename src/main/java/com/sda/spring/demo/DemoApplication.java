@@ -22,16 +22,6 @@ public class DemoApplication implements CommandLineRunner {
 	@Autowired
 	private ApplicationContext applicationContext;
 
-	private BookRepository bookRepository;
-
-	private CategoryRepository categoryRepository;
-
-	@Autowired
-	public DemoApplication(BookRepository bookRepository, CategoryRepository categoryRepository) {
-		this.bookRepository = bookRepository;
-		this.categoryRepository = categoryRepository;
-	}
-
 	public static void main(String[] args) {
 
 		SpringApplication.run(DemoApplication.class, args);
